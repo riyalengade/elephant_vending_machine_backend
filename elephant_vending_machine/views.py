@@ -4,6 +4,7 @@ Here, all API routes for the experiment server are defined.
 Consider splitting into its own package if end up being
 a lot of routes.
 """
+
 # Circular import OK here. See https://flask.palletsprojects.com/en/1.1.x/patterns/packages/
 # pylint: disable=cyclic-import
 from datetime import datetime
@@ -21,7 +22,9 @@ def run_trial():
     Returns:
         HTTP response 200 with payload 'Running {trial_name}' or
         HTTP response 400 with payload 'No trial_name specified'
+
     """
+
     response = ""
     if request.args.get('trial_name') is not None:
         trial_name = request.args.get('trial_name')
@@ -47,7 +50,9 @@ def upload_image():
     Returns:
         HTTP response 200 with payload 'File received' or
         HTTP response 500 with payload 'No image file in request.'
+
     """
+
     response = ""
     if 'file' in request.files:
         response = "File received."
@@ -65,7 +70,9 @@ def log():
     Returns:
         HTTP response 200 if log file exists, or HTTP response 500
         if it does not.
+
     """
+
     response = ""
     if request.args.get('log_name') is not None:
         response = 'This would be ' + request.args.get('log_name')
