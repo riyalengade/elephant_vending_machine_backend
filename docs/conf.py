@@ -64,6 +64,14 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_context = {
+    "display_github": True, # Integrate Gitlab
+    "github_user": "Kalafut-organization", # Username
+    "github_repo": "elephants_cse5911", # Repo name
+    "github_version": "master", # Version
+    "conf_py_path": "/source/", # Path in the checkout to the docs root
+}
+
 # Setup function for custom CSS
 def setup(app):
     app.add_stylesheet('theme_overrides.css')

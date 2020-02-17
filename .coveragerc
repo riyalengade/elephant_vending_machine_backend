@@ -1,5 +1,9 @@
 [run]
+    source=elephants_cse5911
+
 omit =
 	# Ignore all files in virtual environment
 	*/.venv/*
 	*/tests/*
+	# Ignore Sphinx documentation files
+	*/docs/*
