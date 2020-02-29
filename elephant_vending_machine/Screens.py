@@ -3,7 +3,7 @@
 class Screens:
 
     def __init__(self):
-        self.screen_number = ''
+        self.screen_number = 0
         self.stimuli = ''
         self.correct_stimuli = ''
 
@@ -11,7 +11,7 @@ class Screens:
         self.screen_number = screen_number
 
     def set_stimuli(self,stimuli):
-        self.stimuli = '~/images/' + stimuli
+        self.stimuli = stimuli
 
     def set_stimuli_flag(self, correct_flag):
         self.correct_stimuli = correct_flag
