@@ -4,7 +4,10 @@
 
 import os
 import random
+from elephant_vending_machine import elephant_vending_machine
 from elephant_vending_machine import APP, Screens
+from elephant_vending_machine import screens
+from elephant_vending_machine.screens import Screens
 
 L_screen = Screens() # Left Screen 
 M_screen = Screens() # Middle screen 

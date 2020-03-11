@@ -1,7 +1,7 @@
 import pytest
 from elephant_vending_machine import elephant_vending_machine
-from elephant_vending_machine import screens
-from elephant_vending_machine.screens import Screens
+from elephant_vending_machine import Screens
+from elephant_vending_machine.Screens import Screens
 
 @pytest.fixture
 def screen1():
@@ -45,17 +45,17 @@ def test_get_screen_num_two(screen2):
 
 def test_get_stimuli_one(screen1):
     stimuli_test = '/images/test_image.jpeg'
-    screen1.set_stimuli(stimuli_test)
-    assert screen1.get_stimuli == stimuli_test 
+    screen1.set_stimuli('/images/test_image.jpeg')
+    assert screen1.get_stimuli()== stimuli_test 
 
 def test_get_stimuli_two(screen2):
     screen2.set_stimuli('/images/test_image2.jpeg')
-    assert screen2.get_stimuli == '/images/test_image2.jpeg' 
+    assert screen2.get_stimuli() == '/images/test_image2.jpeg' 
 
 def test_get_stimuli_flag_one(screen1):
     screen1.set_stimuli_flag(False)
-    assert screen1.get_stimuli_flag == False 
+    assert screen1.get_stimuli_flag() == False 
 
 def test_get_stimuli_flag_two(screen2):
     screen2.set_stimuli_flag(True)
-    assert screen2.get_stimuli_flag == True
+    assert screen2.get_stimuli_flag() == True
