@@ -1,8 +1,6 @@
 import pytest
 from elephant_vending_machine import elephant_vending_machine
-from elephant_vending_machine import helper_library
-from elephant_vending_machine.helper_library import helper_library
-from elephant_vending_machine import Screens
+from elephant_vending_machine import helper_library, Screens
 from elephant_vending_machine.Screens import Screens
 
 @pytest.fixture

@@ -1,13 +1,10 @@
 """Library function to run experiments on the vending machine
-
 """
-
 import os
 import random
 from elephant_vending_machine import elephant_vending_machine
 from elephant_vending_machine import APP, Screens
-from elephant_vending_machine import screens
-from elephant_vending_machine.screens import Screens
+from elephant_vending_machine.Screens import Screens
 
 L_screen = Screens() # Left Screen 
 M_screen = Screens() # Middle screen 
@@ -61,7 +58,7 @@ def set_intertrial_time(time):
     response = ''
     if(time >= 1):
         INTER_TRIAL_TIME = time 
-        response = 'set inter-trial time to ' + INTER_TRIAL_TIME
+        response = 'set inter-trial time to ' + str(INTER_TRIAL_TIME)
     else: 
         response = 'Invalid time. Must be positive and greater than 0.'
     return response
