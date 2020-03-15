@@ -15,7 +15,7 @@ INTER_TRIAL_TIME = 0 # Time interval in between trials
 def display_stimuli(screen_number, stimuli, correct_stimuli):
     """Function to display stimuli to designated screen number. 
 	
-	Args:
+	Parameters:
     screen_number (int): The first screen to display stimuli to. Must be an int 1-3.
     stimuli (str): Image file of stimuli. Must have file extension .jpg or .png 
     correct_stimuli (boolean): flag to indicate if this stimuli is the correct one for the current trial
@@ -52,7 +52,7 @@ def randomize_stimuli(screen1, screen2):
 def set_intertrial_time(time):
     """Function to designate the amount of time to wait between trials.
 	
-	Args:
+	Parameters:
 		time (int): The amount of time to wait between trials in seconds. Must be positive.
     """
     response = ''
