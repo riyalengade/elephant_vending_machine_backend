@@ -1,15 +1,15 @@
 import pytest
 from elephant_vending_machine import elephant_vending_machine
-from elephant_vending_machine import Screens
-from elephant_vending_machine.Screens import Screens
+from elephant_vending_machine import screens
+from elephant_vending_machine.screens import Screen
 
 @pytest.fixture
 def screen1():
-    return Screens()
+    return Screen()
 
 @pytest.fixture
 def screen2():
-    return Screens()
+    return Screen()
 
 def test_set_screen_one(screen1): 
     screen1.set_screen(1)

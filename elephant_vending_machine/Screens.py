@@ -1,7 +1,8 @@
-"""Screen class object to store info about each screen's number, 
-stimuli to display, and if the screen is the correct stimuli or not
-"""
-class Screens:
+
+class Screen:
+    """Screen class object to store info about each screen's number,
+    stimuli to display, and if the screen is the correct stimuli or not
+    """
 
     def __init__(self):
         self.screen_number = 0
@@ -13,13 +14,16 @@ class Screens:
 
         Parameters:
         self: instance of screen class
-        screen_number (int): specifies which screen out of the three on the vending machine. Must be an int 1-3.
+        screen_number (int): specifies which screen out of the three on 
+        the vending machine. Must be an int 1-3.
         """
-        self.screen_number = screen_number
+        if screen_number >= 1 & screen_number <= 3:
+            self.screen_number = screen_number
+        else: 
+            return "invalid screen number, please try again"
 
     def set_stimuli(self, stimuli):
         """Function to set screen's stimuli image
-        
         Parameters:
         self: instance of screen class
         screen_number (str): path to the image stimuli
