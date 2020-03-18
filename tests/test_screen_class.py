@@ -59,3 +59,4 @@ def test_get_stimuli_flag_one(screen1):
 def test_get_stimuli_flag_two(screen2):
     screen2.set_stimuli_flag(True)
     assert screen2.get_stimuli_flag() == True
+    
