@@ -48,4 +48,3 @@ class Screen:
     def get_stimuli_flag(self):
         """Function to return screen's stimuli flag"""
         return self.correct_stimuli
-    
