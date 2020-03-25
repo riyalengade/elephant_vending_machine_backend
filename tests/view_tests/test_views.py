@@ -19,7 +19,7 @@ def client():
     with elephant_vending_machine.APP.test_client() as client:
         yield client
         subprocess.call(["rm","elephant_vending_machine/static/logs/test_file.csv"])
-        subprocess.call(["rm","elephant_vending_machine/static/logs"])
+        subprocess.call(["rm","elephant_vending_machine/static/logs/test_file2.csv"])
 
 def test_run_trial_route_success(client, monkeypatch):
     monkeypatch.setattr('elephant_vending_machine.views.create_experiment_logger', lambda file_name: MockLogger())
@@ -33,7 +33,6 @@ def test_run_trial_route_empty_query_string(client):
     assert response.status_code == 400
 
 def test_get_log_endpoint(client):
-    path_to_current_file = os.path.dirname(os.path.abspath(__file__))
     subprocess.call(["touch", "elephant_vending_machine/static/logs/test_file.csv"])
     subprocess.call(["touch", "elephant_vending_machine/static/logs/test_file2.csv"])
     response = client.get('/log')
