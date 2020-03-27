@@ -19,7 +19,7 @@ from .libraries.experiment_logger import create_experiment_logger
 ALLOWED_IMG_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg', 'gif', 'svg'}
 ALLOWED_EXPERIMENT_EXTENSIONS = {'py'}
 IMAGE_UPLOAD_FOLDER = '/static/img'
-EXPERIMENT_UPLOAD_FOLDER = '/static/experiments'
+EXPERIMENT_UPLOAD_FOLDER = '/static/experiment'
 
 @APP.route('/run-trial', methods=['POST'])
 def run_trial():
@@ -255,7 +255,7 @@ def upload_experiment():
 
 @APP.route('/experiment', methods=['GET'])
 def list_experiments():
-    """Returns a list of experiments from the experiments directory
+    """Returns a list of experiments from the experiment directory
 
     **Example request**:
 
@@ -278,8 +278,8 @@ def list_experiments():
 
       {
         "files": [
-          "http://localhost/static/experiments/exampleExperiment.py",
-          "http://localhost/static/experiments/testColorPerception.py"
+          "http://localhost/static/experiment/exampleExperiment.py",
+          "http://localhost/static/experiment/testColorPerception.py"
         ]
       }
 
@@ -288,7 +288,7 @@ def list_experiments():
     resource_route = "/static/experiment/"
     file_request_path = request.base_url[:request.base_url.rfind('/')] + resource_route
     path_to_current_file = os.path.dirname(os.path.abspath(__file__))
-    experiments_path = os.path.join(path_to_current_file, 'static', 'experiments')
+    experiments_path = os.path.join(path_to_current_file, 'static', 'experiment')
     directory_list = os.listdir(experiments_path)
     exper_files = [f for f in directory_list if os.path.isfile(os.path.join(experiments_path, f))]
     exper_files.sort()
@@ -300,7 +300,7 @@ def list_experiments():
 
 @APP.route('/log', methods=['GET'])
 def list_logs():
-    """Returns a list of log resources from the logs directory.
+    """Returns a list of log resources from the log directory.
 
     **Example request**:
 
@@ -323,17 +323,17 @@ def list_logs():
 
       {
         "files": [
-          "http://localhost:5000/static/logs/2020-03-17 04:26:02.085651 exampleExperiment.csv",
-          "http://localhost:5000/static/logs/2020-03-17 04:27:04.019992 exampleExperiment.csv"
+          "http://localhost:5000/static/log/2020-03-17 04:26:02.085651 exampleExperiment.csv",
+          "http://localhost:5000/static/log/2020-03-17 04:27:04.019992 exampleExperiment.csv"
         ]
       }
 
     :status 200: log file list successfully returned
     """
-    resource_route = "/static/logs/"
+    resource_route = "/static/log/"
     file_request_path = request.base_url[:request.base_url.rfind('/')] + resource_route
     path_to_current_file = os.path.dirname(os.path.abspath(__file__))
-    logs_path = os.path.join(path_to_current_file, 'static', 'logs')
+    logs_path = os.path.join(path_to_current_file, 'static', 'log')
     directory_list = os.listdir(logs_path)
     log_files = [f for f in directory_list if os.path.isfile(os.path.join(logs_path, f))]
     log_files.sort()
